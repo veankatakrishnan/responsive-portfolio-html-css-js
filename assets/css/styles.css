@@ -172,7 +172,7 @@ img {
 @media screen and (max-width: 1150px){
   .nav__menu{
     position: fixed;
-    top: -120%;
+    top: -100%;
     left: 0;
     width: 100%;
     background-color: var(--body-color);
@@ -281,7 +281,7 @@ img {
   }
 
   .nav{
-    height: calc(var(--header-height)+2rem);
+    height: calc(var(--header-height) + 2rem);
   }
 
   .nav__toggle,
