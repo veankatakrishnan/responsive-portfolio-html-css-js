@@ -268,7 +268,21 @@
 
          <!--==================== SKILLS ====================-->
          <section class="skills section" id="skills">
-            
+            <h2 class="section__title">Skills</h2>
+            <div class="skills__scroller" data-speed="slow">
+               <ul class="tag-list scroller__inner">
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/c/c-original.svg" alt="C"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg" alt="Node Js"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git"></li>
+                  <li class="scroller__item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub"></li>
+               </ul>
+            </div>
          </section>
 
          <!--==================== PROJECT ====================-->
@@ -324,62 +338,67 @@
 
          <!--==================== CONTACT ====================-->
          <section class="contact section" id="contact">
+            <h2 class="section__title">Contact Me</h2>
+
+            <div class="contact__container container grid">
+               <form action="" class="contact__form grid" id="contact-form">
+                  <input type="text" class="contact__input" placeholder="Name" name="user_name" required>
+                  <input type="email" class="contact__input" placeholder="Email" name="user_email" id="contact-user" required>
+
+                  <textarea name="" placeholder="Message"  name="user_message" class="contact__input contact__area" required></textarea>
+
+                  <button class="button" type="submit">
+                     Send Message
+                  </button>
+
+                  <p class="contact__message" id="contact-message"></p>
+               </form>
+
+               <div class="contact__content grid">
+                  <div class="contact__data grid">
             
-         </section>
-      </main>
-
-      <!--==================== FOOTER ====================-->
-      <footer class="footer">
-         
-      </footer>
-
-      <!--========== SCROLL UP ==========-->
-      
-
-      <!--=============== SCROLLREVEAL ===============-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
-
-      <!--=============== TYPED JS ===============-->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
-
-      <!--=============== EMAIL JS ===============-->
-      <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-      <!--=============== MAIN JS ===============-->
-      <script src="assets/js/main.js"></script>
-      <script>
-      // Timeline scroll progress animation
-      const progressBar = document.getElementById('progress-bar');
-      const timelineSection = document.querySelector('.education');
-
-      function updateProgressBar() {
-         if (!timelineSection || !progressBar) return;
-
-         const sectionTop = timelineSection.offsetTop;
-         const sectionHeight = timelineSection.offsetHeight;
-         const scrollPosition = window.scrollY;
-         const windowHeight = window.innerHeight;
-
-         // Calculate progress
-         const scrollInSection = scrollPosition - sectionTop + windowHeight / 2;
-         const progress = (scrollInSection / sectionHeight) * 100;
-
-         // Clamp between 0 and 100
-         const clampedProgress = Math.min(Math.max(progress, 0), 100);
-
-         // Update progress bar height
-         progressBar.style.height = `${clampedProgress}vh`;
-      }
-
-      // Update on scroll
-      window.addEventListener('scroll', updateProgressBar);
-      
-      // Update on load
-      window.addEventListener('load', updateProgressBar);
-
-      // Update on resize
-      window.addEventListener('resize', updateProgressBar);
-   </script>
-      
-   </body>
-</html>
+                        <address class="contact__address">
+                           <i class="ri-mail-send-line"></i>
+                           <span>veankatakrishnan@gmail.com</span>
+                        </address>
+                        
+                                       <address class="contact__address">
+                                          <i class="ri-map-pin-line"></i>
+                                          <span>Chennai, TN, India</span>
+                                       </address>
+                                    
+                        
+                                       <div class="contact__social">
+                                          <a href="https://www.linkedin.com/in/veankatakrishnan/" target="_blank" class="contact__link">
+                                             <i class="ri-linkedin-box-fill"></i>
+                                          </a>
+                                          <a href="https://www.instagram.com/veankata.krishnan/" target="_blank" class="contact__link">
+                                             <i class="ri-instagram-line"></i>
+                                          </a>
+                                       </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </section>
+                              </main>
+                        
+                              
+                        
+                              <!--========== SCROLL UP ==========-->
+                              
+                        
+                              <!--=============== SCROLLREVEAL ===============-->
+                              <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+                        
+                              <!--=============== TYPED JS ===============-->
+                              <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+                        
+                              <!--=============== EMAIL JS ===============-->
+                              <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                        
+                              <!--=============== MAIN JS ===============-->
+                              <script src="assets/js/main.js"></script>
+                              
+                              
+                           </body>
+                        </html>

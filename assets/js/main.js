@@ -45,64 +45,58 @@ const shadowHeader = () =>{
 }
 window.addEventListener('scroll', shadowHeader)
 
-/*=============== CONTACT EMAIL JS ===============*/ 
+/*=============== CONTACT EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+      contactMessage = document.getElementById('contact-message'),
+      contactUser = document.getElementById('contact-user') // Get the email input
 
+const sendEmail = (e) => {
+    e.preventDefault();
 
-/*=============== SHOW SCROLL UP ===============*/ 
+    // Regex for email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
+    // Check if the email field is empty or invalid
+    if (contactUser.value === '' || !emailRegex.test(contactUser.value)) {
+        // Add and remove color
+        contactMessage.classList.remove('color-green');
+        contactMessage.classList.add('color-red');
 
-/*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
+        // Show message
+        contactMessage.textContent = 'Please enter a valid email address.';
 
+        // Remove message after 3 seconds
+        setTimeout(() => {
+            contactMessage.textContent = '';
+            contactMessage.classList.remove('color-red');
+        }, 3000);
+    } else {
+        // serviceID - templateID - #form - publicKey
+        emailjs.sendForm('service_awlyent', 'template_t2omd0r', '#contact-form', '2476rv9b9DiecLFth')
+            .then(() => {
+                // Show message and add color
+                contactMessage.classList.add('color-green');
+                contactMessage.textContent = 'Message sent successfully';
 
-/*=============== SCROLL REVEAL ANIMATION ===============*/
+                // Remove message after 5 seconds
+                setTimeout(() => {
+                    contactMessage.textContent = '';
+                    contactMessage.classList.remove('color-green');
+                }, 5000);
 
-/*=============== TIME LINE  ===============*/
-const progressBar = document.getElementById('progress-bar');
-      const timelineComponent = document.querySelector('.timeline__component');
-      const timelineSection = document.querySelector('.education');
-
-      function updateProgressBar() {
-         if (!timelineComponent || !progressBar || !timelineSection) return;
-
-         // Get the timeline component position
-         const componentRect = timelineComponent.getBoundingClientRect();
-         const componentTop = componentRect.top + window.scrollY;
-         const componentHeight = componentRect.height;
-         
-         const scrollPosition = window.scrollY;
-         const windowHeight = window.innerHeight;
-
-         // Calculate how far we've scrolled into the timeline
-         const scrollIntoTimeline = scrollPosition + windowHeight / 2 - componentTop;
-         
-         // Calculate progress as a percentage of the timeline height
-         let progress = (scrollIntoTimeline / componentHeight) * 100;
-
-         // Clamp between 0 and 100
-         progress = Math.min(Math.max(progress, 0), 100);
-
-         // Update progress bar height based on actual timeline height
-         const actualHeight = (componentHeight * progress) / 100;
-         progressBar.style.height = `${actualHeight}px`;
-      }
-
-      // Smooth scroll update
-      let ticking = false;
-      function requestUpdate() {
-         if (!ticking) {
-            window.requestAnimationFrame(() => {
-               updateProgressBar();
-               ticking = false;
+                // Clear input fields
+                contactForm.reset();
+            }, (error) => {
+                // Show message and add color
+                contactMessage.classList.add('color-red');
+                contactMessage.textContent = 'Message not sent - Internal Error';
+                 // Remove message after 5 seconds
+                 setTimeout(() => {
+                    contactMessage.textContent = '';
+                    contactMessage.classList.remove('color-red');
+                }, 5000);
             });
-            ticking = true;
-         }
-      }
+    }
+};
 
-      // Update on scroll
-      window.addEventListener('scroll', requestUpdate);
-      
-      // Update on load
-      window.addEventListener('load', updateProgressBar);
-
-      // Update on resize
-      window.addEventListener('resize', updateProgressBar);
+contactForm.addEventListener('submit', sendEmail);
