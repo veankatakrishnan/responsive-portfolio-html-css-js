@@ -699,6 +699,57 @@ img {
       }
 
 /*=============== PROJECTS ===============*/
+.projects__container{
+  row-gap: 2rem;
+}
+
+.projects__card{
+  position: relative;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 8px 16px hsla(0, 0%, 0%, .5);
+}
+
+.projects__data{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(var(--hue), 8%, 8%, .4);
+  backdrop-filter: blur(16px);
+  place-content: center;
+  row-gap: .5rem;
+  text-align: center;
+  padding: 0 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: .4s;
+}
+
+.projects__title{
+  font-size: var(--h3-font-size);
+}
+
+.projects__description{
+  font-size: var(--small-font-size);
+}
+
+.projects__data .button{
+  justify-self: center;
+  background-color: hsla(var(--hue), 8%, 8%, .4);
+  margin-top: .5rem;
+}
+
+.projects__car:hover{
+  box-shadow: 0 8px 16px hsl(var(--hue), 80%, 48%, .2);
+}
+
+.projects__card:hover .projects__data{
+  opacity: 1;
+  pointer-events: initial;
+}
+
 
 
 /*=============== RESUME ===============*/
@@ -736,12 +787,21 @@ img {
   .about__img{
     width: 170px;
   }
+
+  .projects__data{
+    padding-inline: .5rem;
+  }
+
+  .projects__data .button{
+    padding: .5rem .75rem;
+  }
 }
 
 /* For medium devices */
 @media screen and (min-wdith: 540px){
   .home__container,
-  .about__container{
+  .about__container,
+  .projects__container{
     grid-template-columns: 400px;
     justify-content: center;
   }
@@ -760,6 +820,10 @@ img {
   }
   .home__buttons{
     justify-content: initial;
+  }
+
+  .projects__container{
+    grid-template-columns: repeat(2, 350px);
   }
 }
 
@@ -842,6 +906,19 @@ img {
 
   .about_img{
     width: 350px;
+  }
+
+  .projects{
+    padding-block: 8rem 4rem;
+  }
+
+  .projects__container{
+    grid-template-columns: repeat(3,350px);
+    gap: 3rem 2rem;
+  }
+
+  .projects__data .button{
+    margin-top: 1rem;
   }
 }
 
