@@ -6,28 +6,15 @@
   --header-height: 3.5rem;
 
   /*========== Colors ==========*/
-  /* 
-      Color mode HSL(hue, saturation, lightness)
-
-      Change favorite color:
-
-      Default Cyan: hsl(180, 80%, 48%)
-      Blue: hsl(220, 90%, 64%) - Pink: hsl(300, 70%, 64%)
-      Green: hsl(110, 70%, 64%) - Purple: hsl(255, 70%, 64%)
-      Orange: hsl(15, 80%, 64%) - Red: hsl(358, 80%, 64%)
-
-      For more colors visit: https://htmlcolorcodes.com/
-      -> Choose any color 
-      -> Copy the color mode (HSL)
-  */
-  --hue: 180;
-  --first-color: hsl(var(--hue), 80%, 48%);
-  --first-color-alt: hsl(var(--hue), 80%, 44%);
-  --white-color: hsl(var(--hue), 8%, 92%);
-  --black-color: hsl(var(--hue), 4%, 8%);
-  --gray-color: hsl(var(--hue), 4%, 50%);
-  --body-color: hsl(var(--hue), 8%, 8%);
-  --container-color: hsl(var(--hue), 8%, 12%);
+  --hue: 0;
+  --saturation: 0%;
+  --first-color: hsl(var(--hue), var(--saturation), 50%); /* Gray */
+  --first-color-alt: hsl(var(--hue), var(--saturation), 40%); /* Darker Gray */
+  --white-color: hsl(var(--hue), var(--saturation), 20%); /* for text */
+  --black-color: hsl(var(--hue), var(--saturation), 0%); /* for button text */
+  --gray-color: hsl(var(--hue), var(--saturation), 60%); /* Light Gray */
+  --body-color: hsl(var(--hue), var(--saturation), 105%);
+  --container-color: hsl(var(--hue), var(--saturation), 100%);
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -48,6 +35,16 @@
   /*========== z index ==========*/
   --z-tooltip: 10;
   --z-fixed: 100;
+}
+
+body.dark-theme {
+  --first-color: hsl(var(--hue), var(--saturation), 50%);
+  --first-color-alt: hsl(var(--hue), var(--saturation), 40%);
+  --white-color: hsl(var(--hue), var(--saturation), 100%);
+  --black-color: hsl(var(--hue), var(--saturation), 0%);
+  --gray-color: hsl(var(--hue), var(--saturation), 60%);
+  --body-color: hsl(var(--hue), var(--saturation), 0%);
+  --container-color: hsl(var(--hue), var(--saturation), 10%);
 }
 
 /*========== Responsive typography ==========*/
@@ -106,6 +103,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  filter: grayscale(100%);
 }
 
 /*=============== REUSABLE CSS CLASSES ===============*/
@@ -166,6 +164,24 @@ img {
   cursor: pointer;
 }
 
+.nav__buttons{
+  display: flex;
+  align-items: center;
+  column-gap: 1rem;
+}
+
+.change-theme{
+  color: var(--white-color);
+  font-size: 1.25rem;
+  cursor: pointer;
+  transition: color .3s;
+}
+
+.change-theme:hover{
+  color: var(--first-color);
+}
+
+
 /* Navigation for mobile devices */
 @media screen and (max-width: 1150px){
   .nav__menu{
@@ -211,7 +227,7 @@ img {
 }
 
 .nav__link:hover::after{
-  width: 80%;
+  width: 100%;
 }
 
 .nav__close{
@@ -231,7 +247,9 @@ img {
 }
 
 /* Active link */
-
+.active-link::after{
+  width: 60%;
+}
 
 /*=============== HOME ===============*/
 .home__container{
@@ -254,7 +272,7 @@ img {
   align-items: flex-end;
   justify-content: center;
   border: 5px solid var(--first-color);
-  box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, .5);
+  box-shadow: 0 8px 32px hsla(0, 0%, 50%, .3);
 }
 
 .home__img{
@@ -318,7 +336,7 @@ img {
 }
 
 .button:hover{
-  box-shadow: 0 8px 24px hsla(var(--hue), 80%, 48%, .3);
+  box-shadow: 0 8px 24px hsl(var(--hue), var(--saturation), 20%);
 }
 
 .button__ghost{
@@ -401,7 +419,7 @@ img {
   display: flex;
   align-items: center;
   justify-self: center;
-  box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, .3);
+  box-shadow: 0 8px 32px hsla(0, 0%, 50%, .2);
 }
 
 .about__img{
@@ -430,10 +448,6 @@ img {
          color: var(--first-color);
          font-weight: var(--font-semi-bold);
          margin-bottom: 1.5rem;
-         background: linear-gradient(135deg, var(--first-color), hsl(var(--hue), 80%, 60%));
-         -webkit-background-clip: text;
-         -webkit-text-fill-color: transparent;
-         background-clip: text;
       }
 
       .education__description {
@@ -540,7 +554,7 @@ img {
       }
 
       .timeline__progress-bar {
-         background: linear-gradient(to bottom, var(--first-color), hsl(var(--hue), 80%, 60%));
+         background: var(--first-color);
          width: 3px;
          height: 50vh;
          position: absolute;
@@ -554,7 +568,7 @@ img {
       .timeline__image-wrapper {
          border-radius: 1rem;
          overflow: hidden;
-         box-shadow: 0 8px 32px hsla(var(--hue), 80%, 48%, .3);
+         box-shadow: 0 8px 32px hsl(var(--hue), var(--saturation), 20%);
          transition: transform .4s;
          margin-bottom: 1.5rem;
       }
@@ -776,6 +790,10 @@ img {
   animation: scroll 40s linear infinite;
 }
 
+.skills__scroller[data-direction="right"] {
+    animation-direction: reverse;
+}
+
 .scroller__item {
     background-color: var(--container-color);
     padding: 1rem;
@@ -909,13 +927,45 @@ img {
 
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+  width: .6rem;
+  background-color: hsla(0, 0%, 15%);
+  border-radius: .5rem;
+}
 
+::-webkit-scrollbar-thumb{
+  background-color: hsl(0, 0%, 25%);
+  border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background-color: hsl(0, 0%, 35%);
+}
 
 /*=============== SCROLL UP ===============*/
+.scrollup{
+  position: fixed;
+  right: 1rem;
+  bottom: -50%;
+  background-color: var(--body-color);
+  box-shadow: 0 4px 16px hsla(0, 0%, 0%, .5);
+  display: inline-flex;
+  padding: 6px;
+  color: var(--white-color);
+  font-size: 1.25rem;
+  border-radius: .25rem;
+  z-index: var(--z-tooltip);
+  transition: bottom .4s, transform .4s;
+}
 
+.scrollup:hover{
+  transform: translateY(-.5rem);
+}
 
 /* Show Scroll Up */
-
+.show-scroll{
+  bottom: 3rem;
+}
 
 /*=============== BREAKPOINTS ===============*/
 /* For small devices */
@@ -1103,6 +1153,16 @@ img {
   .contact__area{
     height: 14rem;
   }
+
+  .scrollup{
+    right: 3rem;
+  }
+
 }
 
 /* For 2K resolutions (2048 x 1152, 2048 x 1536) */
+@media screen and (min-width : 2048px){
+  body{
+    zoom: 1.2;
+  }
+}

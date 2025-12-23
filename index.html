@@ -23,7 +23,7 @@
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                   <li>
-                     <a href="#home" class="nav__link">Home</a>
+                     <a href="#home" class="nav__link active-link">Home</a>
                   </li>
                   <li>
                      <a href="#about" class="nav__link">About</a>
@@ -48,9 +48,14 @@
                </div>
             </div>
 
-            <!--Toggle Menu-->
-            <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-line"></i>
+            <div class="nav__buttons">
+                <!-- Theme change button -->
+                <i class="ri-moon-line change-theme" id="theme-button"></i>
+
+                <!--Toggle Menu-->
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line"></i>
+                </div>
             </div>
          </nav>
       </header>
@@ -62,7 +67,7 @@
             <div class="home__container container grid">
                <div class="home__content">
                   <div class="home__image">
-                     <img src="assets/img/Cherai Beach Sq.jpg" alt="image" class="home__img">
+                     <img src="assets/img/prfp.jpg" alt="image" class="home__img">
                   </div>
 
                   <div class="home__social">
@@ -92,7 +97,7 @@
                   </p>
 
                   <div class="home__buttons">
-                     <a href="" class="button">Download Resume</a>
+                     <a href="assets/pdf/Kai-Cv.pdf" download class="button">Download Resume</a>
                      <a href="#projects" class="button button__ghost">Projects</a>
                   </div>
                </div>
@@ -113,24 +118,6 @@
                      <a href="#contact" class="button button__ghost">
                         Contact Me
                      </a>
-                  </div>
-                  <div class="about__skills">
-                     <h3 class="about__subtitle">
-                        <i class="ri-bookmark-fill"></i>
-                        <span>Skills</span>
-                     </h3>
-
-                     <ul class="about__items">
-                        <li class="about__item">HTML</li>
-                        <li class="about__item">CSS</li>
-                        <li class="about__item">JavaScript</li>
-                        <li class="about__item">C</li>
-                        <li class="about__item">Python</li>
-                        <li class="about__item">Java</li>
-                        <li class="about__item">Node</li>
-                        <li class="about__item">Git & GitHub</li>
-
-                     </ul>
                   </div>
                </div>
 
@@ -263,7 +250,6 @@
                </div>
             </div>
 
-            <div style="height: 50vh;"></div>
          </section>
 
          <!--==================== SKILLS ====================-->
@@ -289,48 +275,32 @@
          <section class="projects section" id="projects">
             <h2 class="section__title">Projects</h2>
             <div class="projects__container container grid">
+               
+
                <article class="projects__card">
-                  <img src="assets/img/project-1.png" alt="image" class="projects_img">
+                  <img src="assets/img/Vital Monitoring Smart Glove.png" alt="image" class="projects_img">
                   <div class="projects__data">
-                     <h3 class="projects__title"></h3>
-                     <p class="projects__description">Creation, design and developement of a </p>
-                     <a href="#" target="_blank" class="button button__ghost">View Project</a>
+                     <h3 class="projects__title">Smart Glove</h3>
+                     <p class="projects__description">Creation, design and implementation of a vital monitoring smart glove</p>
+                     <a href="" class="button button__ghost">In Progress</a>
                   </div>
                </article>
 
                <article class="projects__card">
-                  <img src="assets/img/project-2.png" alt="image" class="projects_img">
+                  <img src="assets/img/Ball Bering.png" alt="image" class="projects_img">
                   <div class="projects__data">
-                     <h3 class="projects__title"></h3>
-                     <p class="projects__description">Creation, design and developement of a </p>
-                     <a href="#" target="_blank" class="button button__ghost">View Project</a>
+                     <h3 class="projects__title">Machine Fault Diagnosis</h3>
+                     <p class="projects__description">Implemented a bearing fault diagnosis system using ANN and ANFIS on CWRU vibration data, with MATLAB/Simulink-based validation.</p>
+                     <a href="https://github.com/veankatakrishnan/machine-fault-diagnosis" target="_blank" class="button button__ghost">View Project</a>
                   </div>
                </article>
 
                <article class="projects__card">
-                  <img src="assets/img/project-3.png" alt="image" class="projects_img">
+                  <img src="assets/img/Portfolio.png" alt="image" class="projects_img">
                   <div class="projects__data">
-                     <h3 class="projects__title"></h3>
-                     <p class="projects__description">Creation, design and developement of a </p>
-                     <a href="#" target="_blank" class="button button__ghost">View Project</a>
-                  </div>
-               </article>
-
-               <article class="projects__card">
-                  <img src="assets/img/project-4.png" alt="image" class="projects_img">
-                  <div class="projects__data">
-                     <h3 class="projects__title"></h3>
-                     <p class="projects__description">Creation, design and developement of a </p>
-                     <a href="#" target="_blank" class="button button__ghost">View Project</a>
-                  </div>
-               </article>
-
-               <article class="projects__card">
-                  <img src="assets/img/project-5.png" alt="image" class="projects_img">
-                  <div class="projects__data">
-                     <h3 class="projects__title"></h3>
-                     <p class="projects__description">Creation, design and developement of a </p>
-                     <a href="#" target="_blank" class="button button__ghost">View Project</a>
+                     <h3 class="projects__title">Portfolio Website</h3>
+                     <p class="projects__description">Made a website about me with HTML, CSS and JavaScript</p>
+                     <a href="https://github.com/veankatakrishnan/responsive-portfolio-html-css-js" target="_blank" class="button button__ghost">View Project</a>
                   </div>
                </article>
             </div>
@@ -357,48 +327,52 @@
                <div class="contact__content grid">
                   <div class="contact__data grid">
             
-                        <address class="contact__address">
-                           <i class="ri-mail-send-line"></i>
-                           <span>veankatakrishnan@gmail.com</span>
-                        </address>
-                        
-                                       <address class="contact__address">
-                                          <i class="ri-map-pin-line"></i>
-                                          <span>Chennai, TN, India</span>
-                                       </address>
+                     <address class="contact__address">
+                        <i class="ri-mail-send-line"></i>
+                        <span>veankatakrishnan@gmail.com</span>
+                     </address>
+                     
+                     <address class="contact__address">
+                        <i class="ri-map-pin-line"></i>
+                        <span>Chennai, TN, India</span>
+                     </address>
                                     
-                        
-                                       <div class="contact__social">
-                                          <a href="https://www.linkedin.com/in/veankatakrishnan/" target="_blank" class="contact__link">
-                                             <i class="ri-linkedin-box-fill"></i>
-                                          </a>
-                                          <a href="https://www.instagram.com/veankata.krishnan/" target="_blank" class="contact__link">
-                                             <i class="ri-instagram-line"></i>
-                                          </a>
-                                       </div>
-                                 </div>
-                              </div>
-                           </div>
-                        </section>
-                              </main>
+                     <div class="contact__social">
+                        <a href="https://www.linkedin.com/in/veankatakrishnan/" target="_blank" class="contact__link">
+                           <i class="ri-linkedin-box-fill"></i>
+                        </a>
+                        <a href="https://www.instagram.com/veankata.krishnan/" target="_blank" class="contact__link">
+                           <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="https://github.com/veankatakrishnan" target="_blank" class="contact__link">
+                        <i class="ri-github-fill"></i>
+                     </a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         </main>
                         
                               
                         
-                              <!--========== SCROLL UP ==========-->
+         <!--========== SCROLL UP ==========-->
+         <a href="" class="scrollup" id="scroll-up">
+            <i class="ri-arrow-up-double-fill"></i>
+          </a>
+                        
+         <!--=============== SCROLLREVEAL ===============-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
+                        
+         <!--=============== TYPED JS ===============-->
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
+                        
+         <!--=============== EMAIL JS ===============-->
+         <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+                        
+         <!--=============== MAIN JS ===============-->
+         <script src="assets/js/main.js"></script>
                               
-                        
-                              <!--=============== SCROLLREVEAL ===============-->
-                              <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/4.0.9/scrollreveal.min.js"></script>
-                        
-                              <!--=============== TYPED JS ===============-->
-                              <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.min.js"></script>
-                        
-                              <!--=============== EMAIL JS ===============-->
-                              <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-                        
-                              <!--=============== MAIN JS ===============-->
-                              <script src="assets/js/main.js"></script>
                               
-                              
-                           </body>
-                        </html>
+   </body>
+</html>
