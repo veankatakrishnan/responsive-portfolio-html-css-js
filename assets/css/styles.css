@@ -743,10 +743,12 @@ img {
 
 .projects__title{
   font-size: var(--h3-font-size);
+  color: white;
 }
 
 .projects__description{
   font-size: var(--small-font-size);
+  color: white;
 }
 
 .projects__data .button{
@@ -755,7 +757,7 @@ img {
   margin-top: .5rem;
 }
 
-.projects__car:hover{
+.projects__card:hover{
   box-shadow: 0 8px 16px hsl(var(--hue), 80%, 48%, .2);
 }
 
