@@ -753,7 +753,7 @@ img {
 
 .projects__data .button{
   justify-self: center;
-  background-color: hsla(var(--hue), 8%, 8%, .4);
+  background-color: hsla(var(--hue), 8%, 8%, 40);
   margin-top: .5rem;
 }
 
@@ -1168,3 +1168,4 @@ img {
     zoom: 1.2;
   }
 }
+
